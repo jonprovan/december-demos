@@ -1,0 +1,20 @@
+spring:
+    application:
+        name: basic-auth
+    datasource:
+        url: jdbc:mysql://localhost:3306/security
+        username: root
+        password: root
+# removing these after adding DB auth
+#    security:
+#      user:
+#        name: admin
+#        password: adminpassword123!
+
+# this allows our application to automatically update the schema of our database
+    jpa:
+      hibernate:
+        ddl-auto: update
+
+server:
+  port: 8080
