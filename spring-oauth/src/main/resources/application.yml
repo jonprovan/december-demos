@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-oauth
+
+# we set up our application using the properties downloaded from Google cloud
+# these, of course, should NOT be included here if you're posting to GitHub, etc.
+# use environment files, just like you would with db information, etc.
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 1234567890.apps.googleusercontent.com
+            client-secret: 1234567890
+            scope:
+              - openid
+              - profile
+              - email
+            redirect-uri: http://localhost:8080/login/oauth2/code/google       
+
+server:
+  port: 8080
